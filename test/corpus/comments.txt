@@ -1,0 +1,39 @@
+==============
+C-style comments
+==============
+
+//
+//
+// // //
+
+---
+
+(source_file
+	(comment)
+	(comment)
+	(comment))
+
+
+==============
+ML-style comments
+==============
+
+(* *)
+
+(* * ) *)
+
+(* (* *) *)
+
+(* *) *)
+
+(* (* *)
+
+---
+
+(source_file
+	(comment)
+	(comment)
+	(comment)
+	(comment)
+	(ERROR (UNEXPECTED '*') (UNEXPECTED '*'))
+	(comment))

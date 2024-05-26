@@ -1,0 +1,98 @@
+==========
+strings
+==========
+
+val () = "./hi"
+
+---
+
+(source_file
+	(val_decl_statement
+		(kwd_val)
+		(unit_literal)
+		(string_literal)))
+
+==========
+invoke
+==========
+
+val T0CAS0 = T_CASE((CSKcas0))
+
+val T0SEXPDEF = T_SEXPDEF(-1)
+
+---
+
+(source_file
+	(val_decl_statement
+		(kwd_val)
+		(ident)
+		(invoke_expr
+			(ident)
+			(ident)))
+	(val_decl_statement
+		(kwd_val)
+		(ident)
+		(invoke_expr
+			(ident)
+			(int_literal))))
+
+
+==========
+addr
+==========
+
+val hi = 3
+
+val hiaddr = $addr(hi)
+
+val hiaddr2 = &addr
+
+---
+
+(source_file
+	(val_decl_statement
+		(kwd_val)
+		(ident)
+		(int_literal))
+	(val_decl_statement
+		(kwd_val)
+		(ident)
+		(addr_expr (kwd_addr) (ident)))
+	(val_decl_statement
+		(kwd_val)
+		(ident)
+		(addr_expr (ident))))
+
+
+==========
+eval
+==========
+
+val hi = 50
+
+val hieval = $eval(hi)
+
+val hieval2 = !hi
+
+val eval2 = $eval(!5)
+
+---
+
+(source_file
+	(val_decl_statement
+		(kwd_val)
+		(ident)
+		(int_literal))
+	(val_decl_statement
+		(kwd_val)
+		(ident)
+		(eval_expr (kwd_eval) (ident)))
+	(val_decl_statement
+		(kwd_val)
+		(ident)
+		(eval_expr (ident)))
+	(val_decl_statement
+		(kwd_val)
+		(ident)
+		(eval_expr (kwd_eval) (eval_expr (int_literal)))))
+
