@@ -38,8 +38,13 @@
   ],
   "tree-sitter": [
     {
-      "scope": "source.ATS",
-      "injection-regex": "^ATS$"
+      "scope": "source.xats",
+      "file-types": [
+        "dats",
+        "sats"
+      ],
+      "injection-regex": "^(ats|xats)$",
+      "highlights": "queries/highlights.scm"
     }
   ]
 }

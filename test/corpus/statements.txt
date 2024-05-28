@@ -7,11 +7,11 @@ staload with rename
 ---
 
 (source_file
-	(staload_statement
-		(kwd_staload)
-		(ident)
-		(symbol)
-		(string_literal)))
+  (staload_statement
+    (kwd_staload)
+    (ident)
+    (symbol)
+    (string_literal)))
 
 
 ==============
@@ -34,13 +34,13 @@ includes different line
 ---
 
 (source_file
-	(include_statement
-		(kwd_include)
-		(string_literal)
-		(MISSING "include_statement_token1"))
-	(include_statement
-		(kwd_include)
-		(string_literal)))
+  (include_statement
+    (kwd_include)
+    (string_literal)
+    (MISSING "include_statement_token1"))
+  (include_statement
+    (kwd_include)
+    (string_literal)))
 
 
 =============
@@ -53,12 +53,12 @@ multiple includes
 ---
 
 (source_file
-	(include_statement
-		(kwd_include)
-		(string_literal))
-	(include_statement
-		(kwd_include)
-		(string_literal)))
+  (include_statement
+    (kwd_include)
+    (string_literal))
+  (include_statement
+    (kwd_include)
+    (string_literal)))
 
 
 =============
@@ -75,18 +75,18 @@ ATS_PACKNAME
 ---
 
 (source_file
-	(define_statement
-		(kwd_define)
-		(ident)
-		(int_literal))
-	(define_statement
-		(kwd_define)
-		(ident)
-		(int_literal))
-	(define_statement
-		(kwd_define)
-		(ident)
-		(string_literal)))
+  (define_statement
+    (kwd_define)
+    (ident)
+    (int_literal))
+  (define_statement
+    (kwd_define)
+    (ident)
+    (int_literal))
+  (define_statement
+    (kwd_define)
+    (ident)
+    (string_literal)))
 
 
 ==========
@@ -107,28 +107,28 @@ T0SRP_PSTFIX = T_SRP_FIXITY(KPSTFIX)
 ---
 
 (source_file
-	(val_decl_statement
-		(kwd_val)
-		(ident)
-		(invoke_expr
-			(ident)
-			(ident))
-		(ident)
-		(invoke_expr
-			(ident)
-			(ident))
-		(ident)
-		(invoke_expr
-			(ident)
-			(ident))
-		(ident)
-		(invoke_expr
-			(ident)
-			(ident))
-		(ident)
-		(invoke_expr
-			(ident)
-			(ident))))
+  (val_decl_statement
+    (kwd_val)
+    (ident)
+    (invoke_expr
+      (ident)
+      (ident))
+    (ident)
+    (invoke_expr
+      (ident)
+      (ident))
+    (ident)
+    (invoke_expr
+      (ident)
+      (ident))
+    (ident)
+    (invoke_expr
+      (ident)
+      (ident))
+    (ident)
+    (invoke_expr
+      (ident)
+      (ident))))
 
 
 ==========
@@ -141,16 +141,16 @@ val BAR_symbl: symbl//symbl("|")
 ---
 
 (source_file
-	(val_intro_statement
-		(kwd_val)
-		(ident)
-		(ident)
-		(comment))
-	(val_intro_statement
-		(kwd_val)
-		(ident)
-		(ident)
-		(comment)))
+  (val_intro_statement
+    (kwd_val)
+    (ident)
+    (ident)
+    (comment))
+  (val_intro_statement
+    (kwd_val)
+    (ident)
+    (ident)
+    (comment)))
 
 
 ==========
@@ -162,12 +162,12 @@ val () = print("Hello World!")
 ---
 
 (source_file
-	(val_decl_statement
-		(kwd_val)
-		(unit_literal)
-		(invoke_expr
-			(ident)
-			(string_literal))))
+  (val_decl_statement
+    (kwd_val)
+    (unit_literal)
+    (invoke_expr
+      (ident)
+      (string_literal))))
 
 ==========
 function intros
@@ -187,22 +187,82 @@ symbl_insert_any(sym: symbl): void
 ---
 
 (source_file
-	(comment)
-	(comment)
-	(fun_intro_statement
-		(kwd_fun)
-		(ident)
-		(ident)
-		(ident)
-		(invoke_expr
-			(ident)
-			(ident)))
-	(fun_intro_statement
-		(kwd_fun)
-		(ident)
-		(ident)
-		(ident)
-		(ident)
-		(comment)
-		(comment)
-		(comment)))
+  (comment)
+  (comment)
+  (fun_intro_statement
+    (kwd_fun)
+    (ident)
+    (ident)
+    (ident)
+    (invoke_expr
+      (ident)
+      (ident)))
+  (fun_intro_statement
+    (kwd_fun)
+    (ident)
+    (ident)
+    (ident)
+    (ident)
+    (comment)
+    (comment)
+    (comment)))
+
+==========
+local
+==========
+
+local
+  #symload + with my_plus
+in
+  val () = 5
+end
+
+---
+
+(source_file
+  (local_statement
+    (kwd_local)
+    (symload_statement
+      (kwd_symload)
+      (symbol)
+      (kwd_with)
+      (ident))
+    (kwd_in)
+    (val_decl_statement
+      (kwd_val)
+      (unit_literal)
+      (int_literal))
+    (kwd_end)))
+
+
+==========
+implfun
+==========
+
+#implfun hi(a, b) = 5
+
+---
+
+(source_file
+  (fun_impl_statement
+    (kwd_implfun)
+    (ident)
+    (ident)
+    (ident)
+    (int_literal)))
+
+
+==========
+impltmp
+==========
+
+#impltmp g_print$out <> () = out
+
+---
+
+(source_file
+  (fun_impl_statement
+    (kwd_impltmp)
+    (ident)
+    (template)
+    (ident)))

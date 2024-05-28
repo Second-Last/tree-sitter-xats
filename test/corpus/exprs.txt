@@ -96,3 +96,28 @@ val eval2 = $eval(!5)
 		(ident)
 		(eval_expr (kwd_eval) (eval_expr (int_literal)))))
 
+
+==========
+case
+==========
+
+val () =
+    case var of
+        | 1 => 2 | 2 => 3
+
+---
+
+(source_file
+  (val_decl_statement
+    (kwd_val)
+    (unit_literal)
+    (case_expr
+      (kwd_case)
+      (ident)
+      (kwd_of)
+      (case_branch
+        (int_literal)
+        (int_literal))
+      (case_branch
+        (int_literal)
+        (int_literal)))))

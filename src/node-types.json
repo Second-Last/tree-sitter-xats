@@ -19,19 +19,27 @@
     }
   },
   {
-    "type": "addr_expr",
+    "type": "access_expr",
     "named": true,
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
+        {
+          "type": "access_expr",
+          "named": true
+        },
         {
           "type": "addr_expr",
           "named": true
         },
         {
           "type": "bool_literal",
+          "named": true
+        },
+        {
+          "type": "case_expr",
           "named": true
         },
         {
@@ -63,6 +71,10 @@
           "named": true
         },
         {
+          "type": "infix_expr",
+          "named": true
+        },
+        {
           "type": "int_literal",
           "named": true
         },
@@ -71,11 +83,11 @@
           "named": true
         },
         {
-          "type": "kwd_addr",
+          "type": "lazy_expr",
           "named": true
         },
         {
-          "type": "lazy_expr",
+          "type": "let_expr",
           "named": true
         },
         {
@@ -99,6 +111,10 @@
           "named": true
         },
         {
+          "type": "seq_expr",
+          "named": true
+        },
+        {
           "type": "string_literal",
           "named": true
         },
@@ -117,6 +133,137 @@
         {
           "type": "unit_literal",
           "named": true
+        },
+        {
+          "type": "where_expr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "addr_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "access_expr",
+          "named": true
+        },
+        {
+          "type": "addr_expr",
+          "named": true
+        },
+        {
+          "type": "bool_literal",
+          "named": true
+        },
+        {
+          "type": "case_expr",
+          "named": true
+        },
+        {
+          "type": "char_literal",
+          "named": true
+        },
+        {
+          "type": "eval_expr",
+          "named": true
+        },
+        {
+          "type": "float_literal",
+          "named": true
+        },
+        {
+          "type": "fold_expr",
+          "named": true
+        },
+        {
+          "type": "free_expr",
+          "named": true
+        },
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "if_then_else_expr",
+          "named": true
+        },
+        {
+          "type": "infix_expr",
+          "named": true
+        },
+        {
+          "type": "int_literal",
+          "named": true
+        },
+        {
+          "type": "invoke_expr",
+          "named": true
+        },
+        {
+          "type": "kwd_addr",
+          "named": true
+        },
+        {
+          "type": "lazy_expr",
+          "named": true
+        },
+        {
+          "type": "let_expr",
+          "named": true
+        },
+        {
+          "type": "llazy_expr",
+          "named": true
+        },
+        {
+          "type": "raise_expr",
+          "named": true
+        },
+        {
+          "type": "rec_expr",
+          "named": true
+        },
+        {
+          "type": "rec_t0_expr",
+          "named": true
+        },
+        {
+          "type": "rec_vt_expr",
+          "named": true
+        },
+        {
+          "type": "seq_expr",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        },
+        {
+          "type": "tup_expr",
+          "named": true
+        },
+        {
+          "type": "tup_t0_expr",
+          "named": true
+        },
+        {
+          "type": "tup_vt_expr",
+          "named": true
+        },
+        {
+          "type": "unit_literal",
+          "named": true
+        },
+        {
+          "type": "where_expr",
+          "named": true
         }
       ]
     }
@@ -125,6 +272,276 @@
     "type": "bool_literal",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "case_branch",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "access_expr",
+          "named": true
+        },
+        {
+          "type": "addr_expr",
+          "named": true
+        },
+        {
+          "type": "bool_literal",
+          "named": true
+        },
+        {
+          "type": "case_expr",
+          "named": true
+        },
+        {
+          "type": "char_literal",
+          "named": true
+        },
+        {
+          "type": "constructor_pat",
+          "named": true
+        },
+        {
+          "type": "eval_expr",
+          "named": true
+        },
+        {
+          "type": "float_literal",
+          "named": true
+        },
+        {
+          "type": "fold_expr",
+          "named": true
+        },
+        {
+          "type": "free_expr",
+          "named": true
+        },
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "if_then_else_expr",
+          "named": true
+        },
+        {
+          "type": "infix_expr",
+          "named": true
+        },
+        {
+          "type": "int_literal",
+          "named": true
+        },
+        {
+          "type": "invoke_expr",
+          "named": true
+        },
+        {
+          "type": "lazy_expr",
+          "named": true
+        },
+        {
+          "type": "let_expr",
+          "named": true
+        },
+        {
+          "type": "llazy_expr",
+          "named": true
+        },
+        {
+          "type": "raise_expr",
+          "named": true
+        },
+        {
+          "type": "rec_expr",
+          "named": true
+        },
+        {
+          "type": "rec_t0_expr",
+          "named": true
+        },
+        {
+          "type": "rec_vt_expr",
+          "named": true
+        },
+        {
+          "type": "seq_expr",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        },
+        {
+          "type": "tup_expr",
+          "named": true
+        },
+        {
+          "type": "tup_t0_expr",
+          "named": true
+        },
+        {
+          "type": "tup_vt_expr",
+          "named": true
+        },
+        {
+          "type": "tuple_pat",
+          "named": true
+        },
+        {
+          "type": "unit_literal",
+          "named": true
+        },
+        {
+          "type": "where_expr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "case_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "access_expr",
+          "named": true
+        },
+        {
+          "type": "addr_expr",
+          "named": true
+        },
+        {
+          "type": "bool_literal",
+          "named": true
+        },
+        {
+          "type": "case_branch",
+          "named": true
+        },
+        {
+          "type": "case_expr",
+          "named": true
+        },
+        {
+          "type": "char_literal",
+          "named": true
+        },
+        {
+          "type": "eval_expr",
+          "named": true
+        },
+        {
+          "type": "float_literal",
+          "named": true
+        },
+        {
+          "type": "fold_expr",
+          "named": true
+        },
+        {
+          "type": "free_expr",
+          "named": true
+        },
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "if_then_else_expr",
+          "named": true
+        },
+        {
+          "type": "infix_expr",
+          "named": true
+        },
+        {
+          "type": "int_literal",
+          "named": true
+        },
+        {
+          "type": "invoke_expr",
+          "named": true
+        },
+        {
+          "type": "kwd_case",
+          "named": true
+        },
+        {
+          "type": "kwd_endcas",
+          "named": true
+        },
+        {
+          "type": "kwd_of",
+          "named": true
+        },
+        {
+          "type": "lazy_expr",
+          "named": true
+        },
+        {
+          "type": "let_expr",
+          "named": true
+        },
+        {
+          "type": "llazy_expr",
+          "named": true
+        },
+        {
+          "type": "raise_expr",
+          "named": true
+        },
+        {
+          "type": "rec_expr",
+          "named": true
+        },
+        {
+          "type": "rec_t0_expr",
+          "named": true
+        },
+        {
+          "type": "rec_vt_expr",
+          "named": true
+        },
+        {
+          "type": "seq_expr",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        },
+        {
+          "type": "tup_expr",
+          "named": true
+        },
+        {
+          "type": "tup_t0_expr",
+          "named": true
+        },
+        {
+          "type": "tup_vt_expr",
+          "named": true
+        },
+        {
+          "type": "unit_literal",
+          "named": true
+        },
+        {
+          "type": "where_expr",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "char_literal",
@@ -146,6 +563,130 @@
     }
   },
   {
+    "type": "constructor_pat",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "ident",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "bool_literal",
+          "named": true
+        },
+        {
+          "type": "char_literal",
+          "named": true
+        },
+        {
+          "type": "constructor_pat",
+          "named": true
+        },
+        {
+          "type": "float_literal",
+          "named": true
+        },
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "int_literal",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        },
+        {
+          "type": "tuple_pat",
+          "named": true
+        },
+        {
+          "type": "unit_literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "datatype_def_statement",
+    "named": true,
+    "fields": {
+      "constructor": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "ident",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "bool_literal",
+          "named": true
+        },
+        {
+          "type": "char_literal",
+          "named": true
+        },
+        {
+          "type": "constructor_pat",
+          "named": true
+        },
+        {
+          "type": "float_literal",
+          "named": true
+        },
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "int_literal",
+          "named": true
+        },
+        {
+          "type": "kwd_datatype",
+          "named": true
+        },
+        {
+          "type": "kwd_of",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        },
+        {
+          "type": "tuple_pat",
+          "named": true
+        },
+        {
+          "type": "unit_literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "define_statement",
     "named": true,
     "fields": {},
@@ -154,11 +695,19 @@
       "required": true,
       "types": [
         {
+          "type": "access_expr",
+          "named": true
+        },
+        {
           "type": "addr_expr",
           "named": true
         },
         {
           "type": "bool_literal",
+          "named": true
+        },
+        {
+          "type": "case_expr",
           "named": true
         },
         {
@@ -190,6 +739,10 @@
           "named": true
         },
         {
+          "type": "infix_expr",
+          "named": true
+        },
+        {
           "type": "int_literal",
           "named": true
         },
@@ -203,6 +756,10 @@
         },
         {
           "type": "lazy_expr",
+          "named": true
+        },
+        {
+          "type": "let_expr",
           "named": true
         },
         {
@@ -226,6 +783,10 @@
           "named": true
         },
         {
+          "type": "seq_expr",
+          "named": true
+        },
+        {
           "type": "string_literal",
           "named": true
         },
@@ -243,6 +804,10 @@
         },
         {
           "type": "unit_literal",
+          "named": true
+        },
+        {
+          "type": "where_expr",
           "named": true
         }
       ]
@@ -284,11 +849,19 @@
       "required": false,
       "types": [
         {
+          "type": "access_expr",
+          "named": true
+        },
+        {
           "type": "addr_expr",
           "named": true
         },
         {
           "type": "bool_literal",
+          "named": true
+        },
+        {
+          "type": "case_expr",
           "named": true
         },
         {
@@ -317,6 +890,10 @@
         },
         {
           "type": "if_then_else_expr",
+          "named": true
+        },
+        {
+          "type": "infix_expr",
           "named": true
         },
         {
@@ -336,6 +913,10 @@
           "named": true
         },
         {
+          "type": "let_expr",
+          "named": true
+        },
+        {
           "type": "llazy_expr",
           "named": true
         },
@@ -356,6 +937,10 @@
           "named": true
         },
         {
+          "type": "seq_expr",
+          "named": true
+        },
+        {
           "type": "string_literal",
           "named": true
         },
@@ -373,6 +958,10 @@
         },
         {
           "type": "unit_literal",
+          "named": true
+        },
+        {
+          "type": "where_expr",
           "named": true
         }
       ]
@@ -392,11 +981,19 @@
       "required": true,
       "types": [
         {
+          "type": "access_expr",
+          "named": true
+        },
+        {
           "type": "addr_expr",
           "named": true
         },
         {
           "type": "bool_literal",
+          "named": true
+        },
+        {
+          "type": "case_expr",
           "named": true
         },
         {
@@ -425,6 +1022,10 @@
         },
         {
           "type": "if_then_else_expr",
+          "named": true
+        },
+        {
+          "type": "infix_expr",
           "named": true
         },
         {
@@ -444,6 +1045,10 @@
           "named": true
         },
         {
+          "type": "let_expr",
+          "named": true
+        },
+        {
           "type": "llazy_expr",
           "named": true
         },
@@ -461,6 +1066,10 @@
         },
         {
           "type": "rec_vt_expr",
+          "named": true
+        },
+        {
+          "type": "seq_expr",
           "named": true
         },
         {
@@ -482,6 +1091,10 @@
         {
           "type": "unit_literal",
           "named": true
+        },
+        {
+          "type": "where_expr",
+          "named": true
         }
       ]
     }
@@ -495,11 +1108,19 @@
       "required": true,
       "types": [
         {
+          "type": "access_expr",
+          "named": true
+        },
+        {
           "type": "addr_expr",
           "named": true
         },
         {
           "type": "bool_literal",
+          "named": true
+        },
+        {
+          "type": "case_expr",
           "named": true
         },
         {
@@ -528,6 +1149,10 @@
         },
         {
           "type": "if_then_else_expr",
+          "named": true
+        },
+        {
+          "type": "infix_expr",
           "named": true
         },
         {
@@ -547,6 +1172,10 @@
           "named": true
         },
         {
+          "type": "let_expr",
+          "named": true
+        },
+        {
           "type": "llazy_expr",
           "named": true
         },
@@ -564,6 +1193,10 @@
         },
         {
           "type": "rec_vt_expr",
+          "named": true
+        },
+        {
+          "type": "seq_expr",
           "named": true
         },
         {
@@ -585,24 +1218,57 @@
         {
           "type": "unit_literal",
           "named": true
+        },
+        {
+          "type": "where_expr",
+          "named": true
         }
       ]
     }
   },
   {
-    "type": "fun_intro_statement",
+    "type": "fun_decl_statement",
     "named": true,
-    "fields": {},
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "ident",
+            "named": true
+          }
+        ]
+      },
+      "parameter": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "ident",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "access_expr",
+          "named": true
+        },
         {
           "type": "addr_expr",
           "named": true
         },
         {
           "type": "bool_literal",
+          "named": true
+        },
+        {
+          "type": "case_expr",
           "named": true
         },
         {
@@ -631,6 +1297,10 @@
         },
         {
           "type": "if_then_else_expr",
+          "named": true
+        },
+        {
+          "type": "infix_expr",
           "named": true
         },
         {
@@ -666,6 +1336,10 @@
           "named": true
         },
         {
+          "type": "let_expr",
+          "named": true
+        },
+        {
           "type": "llazy_expr",
           "named": true
         },
@@ -686,7 +1360,15 @@
           "named": true
         },
         {
+          "type": "seq_expr",
+          "named": true
+        },
+        {
           "type": "string_literal",
+          "named": true
+        },
+        {
+          "type": "template",
           "named": true
         },
         {
@@ -702,26 +1384,53 @@
           "named": true
         },
         {
+          "type": "type",
+          "named": true
+        },
+        {
           "type": "unit_literal",
+          "named": true
+        },
+        {
+          "type": "where_expr",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "if_then_else_expr",
+    "type": "fun_impl_statement",
     "named": true,
-    "fields": {},
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "ident",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "access_expr",
+          "named": true
+        },
         {
           "type": "addr_expr",
           "named": true
         },
         {
           "type": "bool_literal",
+          "named": true
+        },
+        {
+          "type": "case_expr",
           "named": true
         },
         {
@@ -750,6 +1459,307 @@
         },
         {
           "type": "if_then_else_expr",
+          "named": true
+        },
+        {
+          "type": "infix_expr",
+          "named": true
+        },
+        {
+          "type": "int_literal",
+          "named": true
+        },
+        {
+          "type": "invoke_expr",
+          "named": true
+        },
+        {
+          "type": "kwd_implfun",
+          "named": true
+        },
+        {
+          "type": "kwd_implmnt",
+          "named": true
+        },
+        {
+          "type": "kwd_impltmp",
+          "named": true
+        },
+        {
+          "type": "lazy_expr",
+          "named": true
+        },
+        {
+          "type": "let_expr",
+          "named": true
+        },
+        {
+          "type": "llazy_expr",
+          "named": true
+        },
+        {
+          "type": "raise_expr",
+          "named": true
+        },
+        {
+          "type": "rec_expr",
+          "named": true
+        },
+        {
+          "type": "rec_t0_expr",
+          "named": true
+        },
+        {
+          "type": "rec_vt_expr",
+          "named": true
+        },
+        {
+          "type": "seq_expr",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        },
+        {
+          "type": "template",
+          "named": true
+        },
+        {
+          "type": "tup_expr",
+          "named": true
+        },
+        {
+          "type": "tup_t0_expr",
+          "named": true
+        },
+        {
+          "type": "tup_vt_expr",
+          "named": true
+        },
+        {
+          "type": "unit_literal",
+          "named": true
+        },
+        {
+          "type": "where_expr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "fun_intro_statement",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "ident",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "access_expr",
+          "named": true
+        },
+        {
+          "type": "addr_expr",
+          "named": true
+        },
+        {
+          "type": "bool_literal",
+          "named": true
+        },
+        {
+          "type": "case_expr",
+          "named": true
+        },
+        {
+          "type": "char_literal",
+          "named": true
+        },
+        {
+          "type": "eval_expr",
+          "named": true
+        },
+        {
+          "type": "float_literal",
+          "named": true
+        },
+        {
+          "type": "fold_expr",
+          "named": true
+        },
+        {
+          "type": "free_expr",
+          "named": true
+        },
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "if_then_else_expr",
+          "named": true
+        },
+        {
+          "type": "infix_expr",
+          "named": true
+        },
+        {
+          "type": "int_literal",
+          "named": true
+        },
+        {
+          "type": "invoke_expr",
+          "named": true
+        },
+        {
+          "type": "kwd_fn",
+          "named": true
+        },
+        {
+          "type": "kwd_fn0",
+          "named": true
+        },
+        {
+          "type": "kwd_fn1",
+          "named": true
+        },
+        {
+          "type": "kwd_fnx",
+          "named": true
+        },
+        {
+          "type": "kwd_fun",
+          "named": true
+        },
+        {
+          "type": "lazy_expr",
+          "named": true
+        },
+        {
+          "type": "let_expr",
+          "named": true
+        },
+        {
+          "type": "llazy_expr",
+          "named": true
+        },
+        {
+          "type": "raise_expr",
+          "named": true
+        },
+        {
+          "type": "rec_expr",
+          "named": true
+        },
+        {
+          "type": "rec_t0_expr",
+          "named": true
+        },
+        {
+          "type": "rec_vt_expr",
+          "named": true
+        },
+        {
+          "type": "seq_expr",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        },
+        {
+          "type": "tup_expr",
+          "named": true
+        },
+        {
+          "type": "tup_t0_expr",
+          "named": true
+        },
+        {
+          "type": "tup_vt_expr",
+          "named": true
+        },
+        {
+          "type": "type",
+          "named": true
+        },
+        {
+          "type": "unit_literal",
+          "named": true
+        },
+        {
+          "type": "where_expr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "if_then_else_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "access_expr",
+          "named": true
+        },
+        {
+          "type": "addr_expr",
+          "named": true
+        },
+        {
+          "type": "bool_literal",
+          "named": true
+        },
+        {
+          "type": "case_expr",
+          "named": true
+        },
+        {
+          "type": "char_literal",
+          "named": true
+        },
+        {
+          "type": "eval_expr",
+          "named": true
+        },
+        {
+          "type": "float_literal",
+          "named": true
+        },
+        {
+          "type": "fold_expr",
+          "named": true
+        },
+        {
+          "type": "free_expr",
+          "named": true
+        },
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "if_then_else_expr",
+          "named": true
+        },
+        {
+          "type": "infix_expr",
           "named": true
         },
         {
@@ -781,6 +1791,10 @@
           "named": true
         },
         {
+          "type": "let_expr",
+          "named": true
+        },
+        {
           "type": "llazy_expr",
           "named": true
         },
@@ -798,6 +1812,10 @@
         },
         {
           "type": "rec_vt_expr",
+          "named": true
+        },
+        {
+          "type": "seq_expr",
           "named": true
         },
         {
@@ -819,6 +1837,10 @@
         {
           "type": "unit_literal",
           "named": true
+        },
+        {
+          "type": "where_expr",
+          "named": true
         }
       ]
     }
@@ -837,6 +1859,133 @@
         },
         {
           "type": "string_literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "infix_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "access_expr",
+          "named": true
+        },
+        {
+          "type": "addr_expr",
+          "named": true
+        },
+        {
+          "type": "bool_literal",
+          "named": true
+        },
+        {
+          "type": "case_expr",
+          "named": true
+        },
+        {
+          "type": "char_literal",
+          "named": true
+        },
+        {
+          "type": "eval_expr",
+          "named": true
+        },
+        {
+          "type": "float_literal",
+          "named": true
+        },
+        {
+          "type": "fold_expr",
+          "named": true
+        },
+        {
+          "type": "free_expr",
+          "named": true
+        },
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "if_then_else_expr",
+          "named": true
+        },
+        {
+          "type": "infix_expr",
+          "named": true
+        },
+        {
+          "type": "int_literal",
+          "named": true
+        },
+        {
+          "type": "invoke_expr",
+          "named": true
+        },
+        {
+          "type": "lazy_expr",
+          "named": true
+        },
+        {
+          "type": "let_expr",
+          "named": true
+        },
+        {
+          "type": "llazy_expr",
+          "named": true
+        },
+        {
+          "type": "raise_expr",
+          "named": true
+        },
+        {
+          "type": "rec_expr",
+          "named": true
+        },
+        {
+          "type": "rec_t0_expr",
+          "named": true
+        },
+        {
+          "type": "rec_vt_expr",
+          "named": true
+        },
+        {
+          "type": "seq_expr",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "tup_expr",
+          "named": true
+        },
+        {
+          "type": "tup_t0_expr",
+          "named": true
+        },
+        {
+          "type": "tup_vt_expr",
+          "named": true
+        },
+        {
+          "type": "unit_literal",
+          "named": true
+        },
+        {
+          "type": "where_expr",
           "named": true
         }
       ]
@@ -864,11 +2013,19 @@
             "named": false
           },
           {
+            "type": "access_expr",
+            "named": true
+          },
+          {
             "type": "addr_expr",
             "named": true
           },
           {
             "type": "bool_literal",
+            "named": true
+          },
+          {
+            "type": "case_expr",
             "named": true
           },
           {
@@ -900,6 +2057,10 @@
             "named": true
           },
           {
+            "type": "infix_expr",
+            "named": true
+          },
+          {
             "type": "int_literal",
             "named": true
           },
@@ -909,6 +2070,10 @@
           },
           {
             "type": "lazy_expr",
+            "named": true
+          },
+          {
+            "type": "let_expr",
             "named": true
           },
           {
@@ -932,6 +2097,10 @@
             "named": true
           },
           {
+            "type": "seq_expr",
+            "named": true
+          },
+          {
             "type": "string_literal",
             "named": true
           },
@@ -949,6 +2118,10 @@
           },
           {
             "type": "unit_literal",
+            "named": true
+          },
+          {
+            "type": "where_expr",
             "named": true
           }
         ]
@@ -970,11 +2143,19 @@
             "named": false
           },
           {
+            "type": "access_expr",
+            "named": true
+          },
+          {
             "type": "addr_expr",
             "named": true
           },
           {
             "type": "bool_literal",
+            "named": true
+          },
+          {
+            "type": "case_expr",
             "named": true
           },
           {
@@ -1006,6 +2187,10 @@
             "named": true
           },
           {
+            "type": "infix_expr",
+            "named": true
+          },
+          {
             "type": "int_literal",
             "named": true
           },
@@ -1015,6 +2200,10 @@
           },
           {
             "type": "lazy_expr",
+            "named": true
+          },
+          {
+            "type": "let_expr",
             "named": true
           },
           {
@@ -1038,6 +2227,10 @@
             "named": true
           },
           {
+            "type": "seq_expr",
+            "named": true
+          },
+          {
             "type": "string_literal",
             "named": true
           },
@@ -1056,10 +2249,24 @@
           {
             "type": "unit_literal",
             "named": true
+          },
+          {
+            "type": "where_expr",
+            "named": true
           }
         ]
       }
     }
+  },
+  {
+    "type": "kwd_case",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "kwd_val",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "lazy_expr",
@@ -1070,11 +2277,19 @@
       "required": true,
       "types": [
         {
+          "type": "access_expr",
+          "named": true
+        },
+        {
           "type": "addr_expr",
           "named": true
         },
         {
           "type": "bool_literal",
+          "named": true
+        },
+        {
+          "type": "case_expr",
           "named": true
         },
         {
@@ -1103,6 +2318,10 @@
         },
         {
           "type": "if_then_else_expr",
+          "named": true
+        },
+        {
+          "type": "infix_expr",
           "named": true
         },
         {
@@ -1122,6 +2341,10 @@
           "named": true
         },
         {
+          "type": "let_expr",
+          "named": true
+        },
+        {
           "type": "llazy_expr",
           "named": true
         },
@@ -1139,6 +2362,10 @@
         },
         {
           "type": "rec_vt_expr",
+          "named": true
+        },
+        {
+          "type": "seq_expr",
           "named": true
         },
         {
@@ -1160,6 +2387,209 @@
         {
           "type": "unit_literal",
           "named": true
+        },
+        {
+          "type": "where_expr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "let_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "abstbox_statement",
+          "named": true
+        },
+        {
+          "type": "access_expr",
+          "named": true
+        },
+        {
+          "type": "addr_expr",
+          "named": true
+        },
+        {
+          "type": "bool_literal",
+          "named": true
+        },
+        {
+          "type": "case_expr",
+          "named": true
+        },
+        {
+          "type": "char_literal",
+          "named": true
+        },
+        {
+          "type": "datatype_def_statement",
+          "named": true
+        },
+        {
+          "type": "define_statement",
+          "named": true
+        },
+        {
+          "type": "dynload_statement",
+          "named": true
+        },
+        {
+          "type": "eval_expr",
+          "named": true
+        },
+        {
+          "type": "float_literal",
+          "named": true
+        },
+        {
+          "type": "fold_expr",
+          "named": true
+        },
+        {
+          "type": "free_expr",
+          "named": true
+        },
+        {
+          "type": "fun_decl_statement",
+          "named": true
+        },
+        {
+          "type": "fun_impl_statement",
+          "named": true
+        },
+        {
+          "type": "fun_intro_statement",
+          "named": true
+        },
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "if_then_else_expr",
+          "named": true
+        },
+        {
+          "type": "include_statement",
+          "named": true
+        },
+        {
+          "type": "infix_expr",
+          "named": true
+        },
+        {
+          "type": "int_literal",
+          "named": true
+        },
+        {
+          "type": "invoke_expr",
+          "named": true
+        },
+        {
+          "type": "kwd_end",
+          "named": true
+        },
+        {
+          "type": "kwd_endlet",
+          "named": true
+        },
+        {
+          "type": "kwd_in",
+          "named": true
+        },
+        {
+          "type": "kwd_let",
+          "named": true
+        },
+        {
+          "type": "lazy_expr",
+          "named": true
+        },
+        {
+          "type": "let_expr",
+          "named": true
+        },
+        {
+          "type": "llazy_expr",
+          "named": true
+        },
+        {
+          "type": "local_statement",
+          "named": true
+        },
+        {
+          "type": "raise_expr",
+          "named": true
+        },
+        {
+          "type": "rec_expr",
+          "named": true
+        },
+        {
+          "type": "rec_t0_expr",
+          "named": true
+        },
+        {
+          "type": "rec_vt_expr",
+          "named": true
+        },
+        {
+          "type": "seq_expr",
+          "named": true
+        },
+        {
+          "type": "staload_statement",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        },
+        {
+          "type": "symload_statement",
+          "named": true
+        },
+        {
+          "type": "tup_expr",
+          "named": true
+        },
+        {
+          "type": "tup_t0_expr",
+          "named": true
+        },
+        {
+          "type": "tup_vt_expr",
+          "named": true
+        },
+        {
+          "type": "typedef_statement",
+          "named": true
+        },
+        {
+          "type": "unit_literal",
+          "named": true
+        },
+        {
+          "type": "val_decl_statement",
+          "named": true
+        },
+        {
+          "type": "val_impl_statement",
+          "named": true
+        },
+        {
+          "type": "val_intro_statement",
+          "named": true
+        },
+        {
+          "type": "where_expr",
+          "named": true
         }
       ]
     }
@@ -1173,11 +2603,19 @@
       "required": true,
       "types": [
         {
+          "type": "access_expr",
+          "named": true
+        },
+        {
           "type": "addr_expr",
           "named": true
         },
         {
           "type": "bool_literal",
+          "named": true
+        },
+        {
+          "type": "case_expr",
           "named": true
         },
         {
@@ -1206,6 +2644,10 @@
         },
         {
           "type": "if_then_else_expr",
+          "named": true
+        },
+        {
+          "type": "infix_expr",
           "named": true
         },
         {
@@ -1225,6 +2667,10 @@
           "named": true
         },
         {
+          "type": "let_expr",
+          "named": true
+        },
+        {
           "type": "llazy_expr",
           "named": true
         },
@@ -1242,6 +2688,10 @@
         },
         {
           "type": "rec_vt_expr",
+          "named": true
+        },
+        {
+          "type": "seq_expr",
           "named": true
         },
         {
@@ -1263,6 +2713,101 @@
         {
           "type": "unit_literal",
           "named": true
+        },
+        {
+          "type": "where_expr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "local_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "abstbox_statement",
+          "named": true
+        },
+        {
+          "type": "datatype_def_statement",
+          "named": true
+        },
+        {
+          "type": "define_statement",
+          "named": true
+        },
+        {
+          "type": "dynload_statement",
+          "named": true
+        },
+        {
+          "type": "fun_decl_statement",
+          "named": true
+        },
+        {
+          "type": "fun_impl_statement",
+          "named": true
+        },
+        {
+          "type": "fun_intro_statement",
+          "named": true
+        },
+        {
+          "type": "include_statement",
+          "named": true
+        },
+        {
+          "type": "kwd_end",
+          "named": true
+        },
+        {
+          "type": "kwd_endloc",
+          "named": true
+        },
+        {
+          "type": "kwd_endlocal",
+          "named": true
+        },
+        {
+          "type": "kwd_in",
+          "named": true
+        },
+        {
+          "type": "kwd_local",
+          "named": true
+        },
+        {
+          "type": "local_statement",
+          "named": true
+        },
+        {
+          "type": "staload_statement",
+          "named": true
+        },
+        {
+          "type": "symload_statement",
+          "named": true
+        },
+        {
+          "type": "typedef_statement",
+          "named": true
+        },
+        {
+          "type": "val_decl_statement",
+          "named": true
+        },
+        {
+          "type": "val_impl_statement",
+          "named": true
+        },
+        {
+          "type": "val_intro_statement",
+          "named": true
         }
       ]
     }
@@ -1276,11 +2821,19 @@
       "required": true,
       "types": [
         {
+          "type": "access_expr",
+          "named": true
+        },
+        {
           "type": "addr_expr",
           "named": true
         },
         {
           "type": "bool_literal",
+          "named": true
+        },
+        {
+          "type": "case_expr",
           "named": true
         },
         {
@@ -1309,6 +2862,10 @@
         },
         {
           "type": "if_then_else_expr",
+          "named": true
+        },
+        {
+          "type": "infix_expr",
           "named": true
         },
         {
@@ -1328,6 +2885,10 @@
           "named": true
         },
         {
+          "type": "let_expr",
+          "named": true
+        },
+        {
           "type": "llazy_expr",
           "named": true
         },
@@ -1345,6 +2906,10 @@
         },
         {
           "type": "rec_vt_expr",
+          "named": true
+        },
+        {
+          "type": "seq_expr",
           "named": true
         },
         {
@@ -1366,6 +2931,10 @@
         {
           "type": "unit_literal",
           "named": true
+        },
+        {
+          "type": "where_expr",
+          "named": true
         }
       ]
     }
@@ -1379,11 +2948,19 @@
       "required": true,
       "types": [
         {
+          "type": "access_expr",
+          "named": true
+        },
+        {
           "type": "addr_expr",
           "named": true
         },
         {
           "type": "bool_literal",
+          "named": true
+        },
+        {
+          "type": "case_expr",
           "named": true
         },
         {
@@ -1412,6 +2989,10 @@
         },
         {
           "type": "if_then_else_expr",
+          "named": true
+        },
+        {
+          "type": "infix_expr",
           "named": true
         },
         {
@@ -1431,6 +3012,10 @@
           "named": true
         },
         {
+          "type": "let_expr",
+          "named": true
+        },
+        {
           "type": "llazy_expr",
           "named": true
         },
@@ -1448,6 +3033,10 @@
         },
         {
           "type": "rec_vt_expr",
+          "named": true
+        },
+        {
+          "type": "seq_expr",
           "named": true
         },
         {
@@ -1469,6 +3058,10 @@
         {
           "type": "unit_literal",
           "named": true
+        },
+        {
+          "type": "where_expr",
+          "named": true
         }
       ]
     }
@@ -1482,11 +3075,19 @@
       "required": true,
       "types": [
         {
+          "type": "access_expr",
+          "named": true
+        },
+        {
           "type": "addr_expr",
           "named": true
         },
         {
           "type": "bool_literal",
+          "named": true
+        },
+        {
+          "type": "case_expr",
           "named": true
         },
         {
@@ -1515,6 +3116,10 @@
         },
         {
           "type": "if_then_else_expr",
+          "named": true
+        },
+        {
+          "type": "infix_expr",
           "named": true
         },
         {
@@ -1534,6 +3139,10 @@
           "named": true
         },
         {
+          "type": "let_expr",
+          "named": true
+        },
+        {
           "type": "llazy_expr",
           "named": true
         },
@@ -1551,6 +3160,10 @@
         },
         {
           "type": "rec_vt_expr",
+          "named": true
+        },
+        {
+          "type": "seq_expr",
           "named": true
         },
         {
@@ -1572,6 +3185,10 @@
         {
           "type": "unit_literal",
           "named": true
+        },
+        {
+          "type": "where_expr",
+          "named": true
         }
       ]
     }
@@ -1585,11 +3202,19 @@
       "required": true,
       "types": [
         {
+          "type": "access_expr",
+          "named": true
+        },
+        {
           "type": "addr_expr",
           "named": true
         },
         {
           "type": "bool_literal",
+          "named": true
+        },
+        {
+          "type": "case_expr",
           "named": true
         },
         {
@@ -1621,6 +3246,10 @@
           "named": true
         },
         {
+          "type": "infix_expr",
+          "named": true
+        },
+        {
           "type": "int_literal",
           "named": true
         },
@@ -1634,6 +3263,10 @@
         },
         {
           "type": "lazy_expr",
+          "named": true
+        },
+        {
+          "type": "let_expr",
           "named": true
         },
         {
@@ -1657,6 +3290,10 @@
           "named": true
         },
         {
+          "type": "seq_expr",
+          "named": true
+        },
+        {
           "type": "string_literal",
           "named": true
         },
@@ -1675,6 +3312,133 @@
         {
           "type": "unit_literal",
           "named": true
+        },
+        {
+          "type": "where_expr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "seq_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "access_expr",
+          "named": true
+        },
+        {
+          "type": "addr_expr",
+          "named": true
+        },
+        {
+          "type": "bool_literal",
+          "named": true
+        },
+        {
+          "type": "case_expr",
+          "named": true
+        },
+        {
+          "type": "char_literal",
+          "named": true
+        },
+        {
+          "type": "eval_expr",
+          "named": true
+        },
+        {
+          "type": "float_literal",
+          "named": true
+        },
+        {
+          "type": "fold_expr",
+          "named": true
+        },
+        {
+          "type": "free_expr",
+          "named": true
+        },
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "if_then_else_expr",
+          "named": true
+        },
+        {
+          "type": "infix_expr",
+          "named": true
+        },
+        {
+          "type": "int_literal",
+          "named": true
+        },
+        {
+          "type": "invoke_expr",
+          "named": true
+        },
+        {
+          "type": "lazy_expr",
+          "named": true
+        },
+        {
+          "type": "let_expr",
+          "named": true
+        },
+        {
+          "type": "llazy_expr",
+          "named": true
+        },
+        {
+          "type": "raise_expr",
+          "named": true
+        },
+        {
+          "type": "rec_expr",
+          "named": true
+        },
+        {
+          "type": "rec_t0_expr",
+          "named": true
+        },
+        {
+          "type": "rec_vt_expr",
+          "named": true
+        },
+        {
+          "type": "seq_expr",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        },
+        {
+          "type": "tup_expr",
+          "named": true
+        },
+        {
+          "type": "tup_t0_expr",
+          "named": true
+        },
+        {
+          "type": "tup_vt_expr",
+          "named": true
+        },
+        {
+          "type": "unit_literal",
+          "named": true
+        },
+        {
+          "type": "where_expr",
+          "named": true
         }
       ]
     }
@@ -1692,11 +3456,23 @@
           "named": true
         },
         {
+          "type": "datatype_def_statement",
+          "named": true
+        },
+        {
           "type": "define_statement",
           "named": true
         },
         {
           "type": "dynload_statement",
+          "named": true
+        },
+        {
+          "type": "fun_decl_statement",
+          "named": true
+        },
+        {
+          "type": "fun_impl_statement",
           "named": true
         },
         {
@@ -1708,6 +3484,10 @@
           "named": true
         },
         {
+          "type": "local_statement",
+          "named": true
+        },
+        {
           "type": "staload_statement",
           "named": true
         },
@@ -1716,7 +3496,15 @@
           "named": true
         },
         {
+          "type": "typedef_statement",
+          "named": true
+        },
+        {
           "type": "val_decl_statement",
+          "named": true
+        },
+        {
+          "type": "val_impl_statement",
           "named": true
         },
         {
@@ -1796,6 +3584,21 @@
     }
   },
   {
+    "type": "template",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "ident",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "tup_expr",
     "named": true,
     "fields": {},
@@ -1804,11 +3607,19 @@
       "required": true,
       "types": [
         {
+          "type": "access_expr",
+          "named": true
+        },
+        {
           "type": "addr_expr",
           "named": true
         },
         {
           "type": "bool_literal",
+          "named": true
+        },
+        {
+          "type": "case_expr",
           "named": true
         },
         {
@@ -1837,6 +3648,10 @@
         },
         {
           "type": "if_then_else_expr",
+          "named": true
+        },
+        {
+          "type": "infix_expr",
           "named": true
         },
         {
@@ -1856,6 +3671,10 @@
           "named": true
         },
         {
+          "type": "let_expr",
+          "named": true
+        },
+        {
           "type": "llazy_expr",
           "named": true
         },
@@ -1873,6 +3692,10 @@
         },
         {
           "type": "rec_vt_expr",
+          "named": true
+        },
+        {
+          "type": "seq_expr",
           "named": true
         },
         {
@@ -1894,6 +3717,10 @@
         {
           "type": "unit_literal",
           "named": true
+        },
+        {
+          "type": "where_expr",
+          "named": true
         }
       ]
     }
@@ -1907,11 +3734,19 @@
       "required": true,
       "types": [
         {
+          "type": "access_expr",
+          "named": true
+        },
+        {
           "type": "addr_expr",
           "named": true
         },
         {
           "type": "bool_literal",
+          "named": true
+        },
+        {
+          "type": "case_expr",
           "named": true
         },
         {
@@ -1940,6 +3775,10 @@
         },
         {
           "type": "if_then_else_expr",
+          "named": true
+        },
+        {
+          "type": "infix_expr",
           "named": true
         },
         {
@@ -1959,6 +3798,10 @@
           "named": true
         },
         {
+          "type": "let_expr",
+          "named": true
+        },
+        {
           "type": "llazy_expr",
           "named": true
         },
@@ -1976,6 +3819,10 @@
         },
         {
           "type": "rec_vt_expr",
+          "named": true
+        },
+        {
+          "type": "seq_expr",
           "named": true
         },
         {
@@ -1997,6 +3844,10 @@
         {
           "type": "unit_literal",
           "named": true
+        },
+        {
+          "type": "where_expr",
+          "named": true
         }
       ]
     }
@@ -2010,11 +3861,19 @@
       "required": true,
       "types": [
         {
+          "type": "access_expr",
+          "named": true
+        },
+        {
           "type": "addr_expr",
           "named": true
         },
         {
           "type": "bool_literal",
+          "named": true
+        },
+        {
+          "type": "case_expr",
           "named": true
         },
         {
@@ -2043,6 +3902,10 @@
         },
         {
           "type": "if_then_else_expr",
+          "named": true
+        },
+        {
+          "type": "infix_expr",
           "named": true
         },
         {
@@ -2062,6 +3925,10 @@
           "named": true
         },
         {
+          "type": "let_expr",
+          "named": true
+        },
+        {
           "type": "llazy_expr",
           "named": true
         },
@@ -2079,6 +3946,10 @@
         },
         {
           "type": "rec_vt_expr",
+          "named": true
+        },
+        {
+          "type": "seq_expr",
           "named": true
         },
         {
@@ -2100,12 +3971,63 @@
         {
           "type": "unit_literal",
           "named": true
+        },
+        {
+          "type": "where_expr",
+          "named": true
         }
       ]
     }
   },
   {
-    "type": "val_decl_statement",
+    "type": "tuple_pat",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "bool_literal",
+          "named": true
+        },
+        {
+          "type": "char_literal",
+          "named": true
+        },
+        {
+          "type": "constructor_pat",
+          "named": true
+        },
+        {
+          "type": "float_literal",
+          "named": true
+        },
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "int_literal",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        },
+        {
+          "type": "tuple_pat",
+          "named": true
+        },
+        {
+          "type": "unit_literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "type",
     "named": true,
     "fields": {},
     "children": {
@@ -2113,11 +4035,23 @@
       "required": true,
       "types": [
         {
+          "type": "access_expr",
+          "named": true
+        },
+        {
           "type": "addr_expr",
           "named": true
         },
         {
+          "type": "arrow",
+          "named": true
+        },
+        {
           "type": "bool_literal",
+          "named": true
+        },
+        {
+          "type": "case_expr",
           "named": true
         },
         {
@@ -2149,6 +4083,273 @@
           "named": true
         },
         {
+          "type": "infix_expr",
+          "named": true
+        },
+        {
+          "type": "int_literal",
+          "named": true
+        },
+        {
+          "type": "invoke_expr",
+          "named": true
+        },
+        {
+          "type": "lazy_expr",
+          "named": true
+        },
+        {
+          "type": "let_expr",
+          "named": true
+        },
+        {
+          "type": "llazy_expr",
+          "named": true
+        },
+        {
+          "type": "raise_expr",
+          "named": true
+        },
+        {
+          "type": "rec_expr",
+          "named": true
+        },
+        {
+          "type": "rec_t0_expr",
+          "named": true
+        },
+        {
+          "type": "rec_vt_expr",
+          "named": true
+        },
+        {
+          "type": "seq_expr",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        },
+        {
+          "type": "tup_expr",
+          "named": true
+        },
+        {
+          "type": "tup_t0_expr",
+          "named": true
+        },
+        {
+          "type": "tup_vt_expr",
+          "named": true
+        },
+        {
+          "type": "unit_literal",
+          "named": true
+        },
+        {
+          "type": "where_expr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "typedef_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "access_expr",
+          "named": true
+        },
+        {
+          "type": "addr_expr",
+          "named": true
+        },
+        {
+          "type": "bool_literal",
+          "named": true
+        },
+        {
+          "type": "case_expr",
+          "named": true
+        },
+        {
+          "type": "char_literal",
+          "named": true
+        },
+        {
+          "type": "eval_expr",
+          "named": true
+        },
+        {
+          "type": "float_literal",
+          "named": true
+        },
+        {
+          "type": "fold_expr",
+          "named": true
+        },
+        {
+          "type": "free_expr",
+          "named": true
+        },
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "if_then_else_expr",
+          "named": true
+        },
+        {
+          "type": "infix_expr",
+          "named": true
+        },
+        {
+          "type": "int_literal",
+          "named": true
+        },
+        {
+          "type": "invoke_expr",
+          "named": true
+        },
+        {
+          "type": "kwd_typedef",
+          "named": true
+        },
+        {
+          "type": "lazy_expr",
+          "named": true
+        },
+        {
+          "type": "let_expr",
+          "named": true
+        },
+        {
+          "type": "llazy_expr",
+          "named": true
+        },
+        {
+          "type": "raise_expr",
+          "named": true
+        },
+        {
+          "type": "rec_expr",
+          "named": true
+        },
+        {
+          "type": "rec_t0_expr",
+          "named": true
+        },
+        {
+          "type": "rec_vt_expr",
+          "named": true
+        },
+        {
+          "type": "seq_expr",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        },
+        {
+          "type": "symbol",
+          "named": true
+        },
+        {
+          "type": "tup_expr",
+          "named": true
+        },
+        {
+          "type": "tup_t0_expr",
+          "named": true
+        },
+        {
+          "type": "tup_vt_expr",
+          "named": true
+        },
+        {
+          "type": "unit_literal",
+          "named": true
+        },
+        {
+          "type": "where_expr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "unit_literal",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "val_decl_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "access_expr",
+          "named": true
+        },
+        {
+          "type": "addr_expr",
+          "named": true
+        },
+        {
+          "type": "bool_literal",
+          "named": true
+        },
+        {
+          "type": "case_expr",
+          "named": true
+        },
+        {
+          "type": "char_literal",
+          "named": true
+        },
+        {
+          "type": "constructor_pat",
+          "named": true
+        },
+        {
+          "type": "eval_expr",
+          "named": true
+        },
+        {
+          "type": "float_literal",
+          "named": true
+        },
+        {
+          "type": "fold_expr",
+          "named": true
+        },
+        {
+          "type": "free_expr",
+          "named": true
+        },
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "if_then_else_expr",
+          "named": true
+        },
+        {
+          "type": "infix_expr",
+          "named": true
+        },
+        {
           "type": "int_literal",
           "named": true
         },
@@ -2173,6 +4374,10 @@
           "named": true
         },
         {
+          "type": "let_expr",
+          "named": true
+        },
+        {
           "type": "llazy_expr",
           "named": true
         },
@@ -2193,6 +4398,141 @@
           "named": true
         },
         {
+          "type": "seq_expr",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        },
+        {
+          "type": "tup_expr",
+          "named": true
+        },
+        {
+          "type": "tup_t0_expr",
+          "named": true
+        },
+        {
+          "type": "tup_vt_expr",
+          "named": true
+        },
+        {
+          "type": "tuple_pat",
+          "named": true
+        },
+        {
+          "type": "unit_literal",
+          "named": true
+        },
+        {
+          "type": "where_expr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "val_impl_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "access_expr",
+          "named": true
+        },
+        {
+          "type": "addr_expr",
+          "named": true
+        },
+        {
+          "type": "bool_literal",
+          "named": true
+        },
+        {
+          "type": "case_expr",
+          "named": true
+        },
+        {
+          "type": "char_literal",
+          "named": true
+        },
+        {
+          "type": "eval_expr",
+          "named": true
+        },
+        {
+          "type": "float_literal",
+          "named": true
+        },
+        {
+          "type": "fold_expr",
+          "named": true
+        },
+        {
+          "type": "free_expr",
+          "named": true
+        },
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "if_then_else_expr",
+          "named": true
+        },
+        {
+          "type": "infix_expr",
+          "named": true
+        },
+        {
+          "type": "int_literal",
+          "named": true
+        },
+        {
+          "type": "invoke_expr",
+          "named": true
+        },
+        {
+          "type": "kwd_absimpl",
+          "named": true
+        },
+        {
+          "type": "lazy_expr",
+          "named": true
+        },
+        {
+          "type": "let_expr",
+          "named": true
+        },
+        {
+          "type": "llazy_expr",
+          "named": true
+        },
+        {
+          "type": "raise_expr",
+          "named": true
+        },
+        {
+          "type": "rec_expr",
+          "named": true
+        },
+        {
+          "type": "rec_t0_expr",
+          "named": true
+        },
+        {
+          "type": "rec_vt_expr",
+          "named": true
+        },
+        {
+          "type": "seq_expr",
+          "named": true
+        },
+        {
           "type": "string_literal",
           "named": true
         },
@@ -2210,6 +4550,10 @@
         },
         {
           "type": "unit_literal",
+          "named": true
+        },
+        {
+          "type": "where_expr",
           "named": true
         }
       ]
@@ -2224,11 +4568,19 @@
       "required": true,
       "types": [
         {
+          "type": "access_expr",
+          "named": true
+        },
+        {
           "type": "addr_expr",
           "named": true
         },
         {
           "type": "bool_literal",
+          "named": true
+        },
+        {
+          "type": "case_expr",
           "named": true
         },
         {
@@ -2260,6 +4612,10 @@
           "named": true
         },
         {
+          "type": "infix_expr",
+          "named": true
+        },
+        {
           "type": "int_literal",
           "named": true
         },
@@ -2284,6 +4640,10 @@
           "named": true
         },
         {
+          "type": "let_expr",
+          "named": true
+        },
+        {
           "type": "llazy_expr",
           "named": true
         },
@@ -2304,6 +4664,10 @@
           "named": true
         },
         {
+          "type": "seq_expr",
+          "named": true
+        },
+        {
           "type": "string_literal",
           "named": true
         },
@@ -2321,6 +4685,197 @@
         },
         {
           "type": "unit_literal",
+          "named": true
+        },
+        {
+          "type": "where_expr",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "where_expr",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "abstbox_statement",
+          "named": true
+        },
+        {
+          "type": "access_expr",
+          "named": true
+        },
+        {
+          "type": "addr_expr",
+          "named": true
+        },
+        {
+          "type": "bool_literal",
+          "named": true
+        },
+        {
+          "type": "case_expr",
+          "named": true
+        },
+        {
+          "type": "char_literal",
+          "named": true
+        },
+        {
+          "type": "datatype_def_statement",
+          "named": true
+        },
+        {
+          "type": "define_statement",
+          "named": true
+        },
+        {
+          "type": "dynload_statement",
+          "named": true
+        },
+        {
+          "type": "eval_expr",
+          "named": true
+        },
+        {
+          "type": "float_literal",
+          "named": true
+        },
+        {
+          "type": "fold_expr",
+          "named": true
+        },
+        {
+          "type": "free_expr",
+          "named": true
+        },
+        {
+          "type": "fun_decl_statement",
+          "named": true
+        },
+        {
+          "type": "fun_impl_statement",
+          "named": true
+        },
+        {
+          "type": "fun_intro_statement",
+          "named": true
+        },
+        {
+          "type": "ident",
+          "named": true
+        },
+        {
+          "type": "if_then_else_expr",
+          "named": true
+        },
+        {
+          "type": "include_statement",
+          "named": true
+        },
+        {
+          "type": "infix_expr",
+          "named": true
+        },
+        {
+          "type": "int_literal",
+          "named": true
+        },
+        {
+          "type": "invoke_expr",
+          "named": true
+        },
+        {
+          "type": "kwd_where",
+          "named": true
+        },
+        {
+          "type": "lazy_expr",
+          "named": true
+        },
+        {
+          "type": "let_expr",
+          "named": true
+        },
+        {
+          "type": "llazy_expr",
+          "named": true
+        },
+        {
+          "type": "local_statement",
+          "named": true
+        },
+        {
+          "type": "raise_expr",
+          "named": true
+        },
+        {
+          "type": "rec_expr",
+          "named": true
+        },
+        {
+          "type": "rec_t0_expr",
+          "named": true
+        },
+        {
+          "type": "rec_vt_expr",
+          "named": true
+        },
+        {
+          "type": "seq_expr",
+          "named": true
+        },
+        {
+          "type": "staload_statement",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        },
+        {
+          "type": "symload_statement",
+          "named": true
+        },
+        {
+          "type": "tup_expr",
+          "named": true
+        },
+        {
+          "type": "tup_t0_expr",
+          "named": true
+        },
+        {
+          "type": "tup_vt_expr",
+          "named": true
+        },
+        {
+          "type": "typedef_statement",
+          "named": true
+        },
+        {
+          "type": "unit_literal",
+          "named": true
+        },
+        {
+          "type": "val_decl_statement",
+          "named": true
+        },
+        {
+          "type": "val_impl_statement",
+          "named": true
+        },
+        {
+          "type": "val_intro_statement",
+          "named": true
+        },
+        {
+          "type": "where_expr",
           "named": true
         }
       ]
@@ -2363,7 +4918,23 @@
     "named": false
   },
   {
+    "type": ";",
+    "named": false
+  },
+  {
+    "type": "<",
+    "named": false
+  },
+  {
     "type": "=",
+    "named": false
+  },
+  {
+    "type": "=>",
+    "named": false
+  },
+  {
+    "type": ">",
     "named": false
   },
   {
@@ -2379,7 +4950,27 @@
     "named": false
   },
   {
+    "type": "_",
+    "named": false
+  },
+  {
     "type": "and",
+    "named": false
+  },
+  {
+    "type": "arrow",
+    "named": true
+  },
+  {
+    "type": "case",
+    "named": false
+  },
+  {
+    "type": "case+",
+    "named": false
+  },
+  {
+    "type": "case-",
     "named": false
   },
   {
@@ -2407,11 +4998,19 @@
     "named": true
   },
   {
+    "type": "kwd_absimpl",
+    "named": true
+  },
+  {
     "type": "kwd_abstbox",
     "named": true
   },
   {
     "type": "kwd_addr",
+    "named": true
+  },
+  {
+    "type": "kwd_datatype",
     "named": true
   },
   {
@@ -2427,7 +5026,27 @@
     "named": true
   },
   {
+    "type": "kwd_end",
+    "named": true
+  },
+  {
+    "type": "kwd_endcas",
+    "named": true
+  },
+  {
     "type": "kwd_endif",
+    "named": true
+  },
+  {
+    "type": "kwd_endlet",
+    "named": true
+  },
+  {
+    "type": "kwd_endloc",
+    "named": true
+  },
+  {
+    "type": "kwd_endlocal",
     "named": true
   },
   {
@@ -2467,6 +5086,22 @@
     "named": true
   },
   {
+    "type": "kwd_implfun",
+    "named": true
+  },
+  {
+    "type": "kwd_implmnt",
+    "named": true
+  },
+  {
+    "type": "kwd_impltmp",
+    "named": true
+  },
+  {
+    "type": "kwd_in",
+    "named": true
+  },
+  {
     "type": "kwd_include",
     "named": true
   },
@@ -2475,7 +5110,19 @@
     "named": true
   },
   {
+    "type": "kwd_let",
+    "named": true
+  },
+  {
     "type": "kwd_llazy",
+    "named": true
+  },
+  {
+    "type": "kwd_local",
+    "named": true
+  },
+  {
+    "type": "kwd_of",
     "named": true
   },
   {
@@ -2519,7 +5166,7 @@
     "named": true
   },
   {
-    "type": "kwd_val",
+    "type": "kwd_typedef",
     "named": true
   },
   {
@@ -2528,6 +5175,10 @@
   },
   {
     "type": "kwd_vlr",
+    "named": true
+  },
+  {
+    "type": "kwd_where",
     "named": true
   },
   {
@@ -2551,7 +5202,27 @@
     "named": false
   },
   {
-    "type": "unit_literal",
-    "named": true
+    "type": "val",
+    "named": false
+  },
+  {
+    "type": "val+",
+    "named": false
+  },
+  {
+    "type": "val-",
+    "named": false
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "|",
+    "named": false
+  },
+  {
+    "type": "}",
+    "named": false
   }
 ]

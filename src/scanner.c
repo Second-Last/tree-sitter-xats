@@ -13,21 +13,21 @@ enum TokenType
 };
 
 // Currently we don't need any external state...
-void* tree_sitter_XATS_external_scanner_create(void)
+void* tree_sitter_xats_external_scanner_create(void)
 {
 	return NULL;
 }
 
-void tree_sitter_XATS_external_scanner_destroy(void* payload)
+void tree_sitter_xats_external_scanner_destroy(void* payload)
 {
 }
 
-unsigned tree_sitter_XATS_external_scanner_serialize(void* payload, char* buffer)
+unsigned tree_sitter_xats_external_scanner_serialize(void* payload, char* buffer)
 {
 	return 0;
 }
 
-void tree_sitter_XATS_external_scanner_deserialize(void* payload, const char* buffer, unsigned length)
+void tree_sitter_xats_external_scanner_deserialize(void* payload, const char* buffer, unsigned length)
 {
 }
 
@@ -46,7 +46,7 @@ static bool is_eof(TSLexer* lexer)
 	return lexer->eof(lexer);
 }
 
-bool tree_sitter_XATS_external_scanner_scan(void* payload, TSLexer* lexer, const bool* valid_symbols)
+bool tree_sitter_xats_external_scanner_scan(void* payload, TSLexer* lexer, const bool* valid_symbols)
 {
 	while (iswspace(lexer->lookahead))
 	{
