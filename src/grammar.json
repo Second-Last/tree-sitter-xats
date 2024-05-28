@@ -1,5 +1,6 @@
 {
   "name": "xats",
+  "word": "ident",
   "rules": {
     "source_file": {
       "type": "REPEAT",

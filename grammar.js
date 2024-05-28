@@ -259,7 +259,7 @@ module.exports = grammar({
     $.comment,
   ],
 
-  // word: $ => $.ident,
+  word: $ => $.ident,
 
   externals: $ => [
     $.comment,
